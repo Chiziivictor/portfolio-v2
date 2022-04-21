@@ -1,10 +1,32 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const Work = () => {
+  const workRef = useRef(null);
+  useEffect(() => {
+    const el = workRef.current;
+    gsap.to(el, {
+      x: "-80vw",
+      duration: 8,
+      scrollTrigger: {
+        trigger: el,
+        start: "top 80%",
+        end: "top 5%",
+        scrub: 1,
+        toggleActions: "restart none none none",
+      },
+    });
+  }, []);
+
   return (
     <section class="work section" id="work">
       <span class="section__subtitle">My Portfolio</span>
       <h2 class="section__title">Featured Works</h2>
+      <h1 className="animate animate__work" ref={workRef}>
+        Work
+      </h1>
 
       <div class="work__container container grid">
         <div class="work__card">

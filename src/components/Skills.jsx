@@ -110,34 +110,34 @@ const Skills = () => {
             </div>
 
             {/* Second Skill Group */}
-            {/* <div class="skills__group">
-            <div class="skills__data">
-              <i class="bx bxs-badge-check"></i>
+            <div class="skills__group">
+              <div class="skills__data">
+                <i class="bx bxs-badge-check"></i>
 
-              <div>
-                <h3 class="skills__name">Node.JS</h3>
-                <span class="skills__level">Basic</span>
+                <div>
+                  <h3 class="skills__name">Express</h3>
+                  <span class="skills__level">Basic</span>
+                </div>
               </div>
-            </div>
 
-            <div class="skills__data">
-              <i class="bx bxs-badge-check"></i>
+              <div class="skills__data">
+                <i class="bx bxs-badge-check"></i>
 
-              <div>
-                <h3 class="skills__name">Git</h3>
-                <span class="skills__level">Intermediate</span>
+                <div>
+                  <h3 class="skills__name">Git</h3>
+                  <span class="skills__level">Intermediate</span>
+                </div>
               </div>
-            </div>
 
-            <div class="skills__data">
-              <i class="bx bxs-badge-check"></i>
+              {/* <div class="skills__data">
+                <i class="bx bxs-badge-check"></i>
 
-              <div>
-                <h3 class="skills__name">Python</h3>
-                <span class="skills__level">Intermediate</span>
-              </div>
+                <div>
+                  <h3 class="skills__name">Python</h3>
+                  <span class="skills__level">Intermediate</span>
+                </div>
+              </div> */}
             </div>
-          </div> */}
           </div>
         </div>
         <a href="#contact" className="button skills__cta button--ghost">

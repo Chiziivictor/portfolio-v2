@@ -2,6 +2,21 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   padding-top: 1rem;
+
+  @include respond-to("tiny") {
+    grid-template-columns: 145px;
+    justify-content: center;
+  }
+
+  @include respond-to("small") {
+    grid-template-columns: repeat(2, 160px);
+    justify-content: center;
+  }
+
+  @include respond-to("medium") {
+    grid-template-columns: repeat(3, 192px);
+    column-gap: 3rem;
+  }
 }
 
 .services__card {
@@ -9,6 +24,10 @@
   padding: 3rem 1.5rem 1.5rem;
   border-radius: 1rem;
   box-shadow: 0 2px 16px hsla(var(--second-hue), 48%, 8%, 0.1);
+
+  @include respond-to("medium") {
+    padding: 5rem wrem 3rem;
+  }
 }
 
 .servicer__title {
@@ -53,6 +72,11 @@
   background-color: var(--body-color);
   padding: 4.5rem 1.5rem 2.5rem;
   border-radius: 1.5rem;
+
+  @include respond-to("small") {
+    width: 500px;
+    padding: 4.5rem 2.5rem 2.5rem;
+  }
 }
 
 .services__modal-title,
@@ -69,6 +93,10 @@
 .services__modal-description {
   font-size: var(--small-font-size);
   margin-bottom: 2rem;
+
+  @include respond-to("small") {
+    padding: 0 3.5rem;
+  }
 }
 
 .service__modal-list {

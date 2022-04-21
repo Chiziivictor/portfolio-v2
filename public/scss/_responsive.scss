@@ -1,0 +1,253 @@
+/* For medium devices */
+
+@media screen and (min-width: 576px) {
+  .about__info {
+    grid-template-columns: repeat(3, 140px);
+    justify-content: center;
+  }
+
+  .about__description {
+    padding: 0 5rem;
+  }
+
+  .skills__container {
+    justify-content: center;
+  }
+
+  .skills__content {
+    padding: 2rem 4rem;
+  }
+
+  .services__container {
+    grid-template-columns: repeat(2, 160px);
+    justify-content: center;
+  }
+
+  .services__modal-content {
+    width: 500px;
+    padding: 4.5rem 2.5rem 2.5rem;
+  }
+
+  .services__modal-description {
+    padding: 0 3.5rem;
+  }
+
+  .work__container {
+    justify-content: center;
+  }
+
+  .work__img {
+    width: 295px;
+  }
+
+  .contact__info {
+    grid-template-columns: 300px;
+    justify-content: center;
+  }
+
+  .contact__form {
+    width: 360px;
+    margin: 0 auto;
+  }
+}
+
+.home {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+@media screen and (min-width: 750px) {
+  .home__container {
+    display: grid;
+    /* grid-template-columns: repeat(2, 1fr); */
+    grid-template-columns: min-content max-content;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+    padding-right: 4rem;
+    margin-top: 0;
+  }
+
+  .home__data {
+    width: 500px;
+    position: relative;
+    right: 100;
+  }
+
+  .work__container {
+    grid-template-columns: repeat(2, max-content);
+  }
+
+  .contact__container {
+    grid-template-columns: repeat(2, max-content);
+    justify-content: center;
+    column-gap: 3rem;
+  }
+}
+
+.section__title {
+  margin-bottom: 5rem;
+}
+
+/* For large devices */
+@media screen and (min-width: 900px) {
+  .container {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+
+  .section {
+    padding: 6.5rem 0 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .home {
+    padding: 0 5%;
+  }
+
+  .home__container {
+    display: flex;
+    /* grid-template-columns: repeat(2, 1fr); */
+    grid-template-columns: min-content max-content;
+    /* justify-content: center; */
+    /* align-items: center; */
+    padding-top: 2rem;
+    padding-right: 4rem;
+    padding-left: 4rem;
+    margin: 4% 1rem;
+  }
+
+  .home__data {
+    width: 800px;
+  }
+
+  .nav {
+    height: calc(var(--header-height) + 1rem);
+    margin: 0;
+  }
+
+  .nav__logo {
+    margin-left: 7%;
+    margin-top: 0;
+  }
+
+  .nav__menu {
+    position: static;
+    background-color: var(--body-color);
+    width: 40%;
+    padding: 1rem 2.25rem;
+    backdrop-filter: blur(10px);
+    justify-items: center;
+    margin-left: 20%;
+  }
+
+  .cv {
+    font-size: var(--small-font-size);
+    margin-right: 6%;
+  }
+
+  .home__handle {
+    width: 290px;
+    height: 300px;
+  }
+
+  .home__img {
+    width: 250px;
+  }
+
+  .home__social {
+    display: grid;
+  }
+
+  .home_social-link {
+    padding: 0.4rem;
+    font-size: 1.25rem;
+  }
+
+  .home__scroll-icon {
+    font-size: 2rem;
+  }
+
+  .home__scroll {
+    display: grid;
+    justify-items: center;
+    grid-row-gap: 3rem;
+  }
+
+  .about__container {
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    margin: auto 10rem;
+  }
+
+  .about__img {
+    width: 350px;
+  }
+
+  .about__data {
+    text-align: initial;
+    margin-left: 5rem;
+  }
+
+  .about__info {
+    justify-content: initial;
+  }
+
+  .about__box {
+    text-align: center;
+    padding: 1rem 1.25rem;
+  }
+
+  .about__description {
+    padding: 0 4rem 0 0;
+    margin-bottom: 2.5rem;
+  }
+
+  .skills__container {
+    grid-template-columns: repeat(2, 400px);
+    justify-content: center;
+    column-gap: 3rem;
+  }
+
+  .services__container {
+    grid-template-columns: repeat(3, 192px);
+    column-gap: 3rem;
+  }
+
+  .services__card {
+    padding: 5rem 2rem 3rem;
+  }
+
+  .work__container {
+    gap: 3rem;
+  }
+
+  .work__card {
+    padding: 1.25rem;
+  }
+
+  .work__img {
+    margin-bottom: 1rem;
+  }
+
+  .work__title {
+    margin-bottom: 0.5rem;
+  }
+
+  .contact__container {
+    column-gap: 6rem;
+  }
+
+  .footer__social-link {
+    font-size: 1.25rem;
+    padding: 0.4rem;
+    border-radius: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .section {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}

@@ -21,7 +21,7 @@
     display: block;
     color: var(--body-color);
     text-align: center;
-    font-size: var(--smaller-font-size);
+    font-size: var(--fz-xs);
   }
 
   &__social {
@@ -29,6 +29,25 @@
     align-items: center;
     justify-content: center;
     gap: 0.875rem;
+
+    @include respond-to("medium") {
+      display: grid;
+      position: fixed;
+      bottom: 0;
+      left: 50px;
+      row-gap: 1rem;
+    }
+  }
+
+  &__social::after {
+    @include respond-to("medium") {
+      content: "";
+      display: block;
+      height: 90px;
+      width: 1px;
+      background-color: var(--title-color);
+      margin: 0px auto;
+    }
   }
 
   &__social-link {
@@ -38,9 +57,14 @@
     padding: 0.25rem;
     border-radius: 0.25rem;
     display: flex;
-    font-size: 1.2rem;
+    font-size: var(--fz-xl);
     transition: all 0.2s ease-in-out;
     box-shadow: 0 2px 8px hsla(var(--second-hue), 48%, 8%, 0.1);
+
+    @include respond-to("medium") {
+      padding: 0.4rem;
+      font-size: var(--fz-sm);
+    }
   }
 
   &__social-link:hover {
@@ -49,16 +73,30 @@
   }
 
   &__scroll {
-    color: var(--title-color);
-    right: -30px;
-    bottom: 0;
-    row-gap: 2.25rem;
-    justify-items: center;
     display: none;
+
+    @include respond-to("medium") {
+      display: grid;
+      color: var(--title-color);
+      row-gap: 2.25rem;
+      gap: 3rem;
+      position: fixed;
+      right: -30px;
+      bottom: 0;
+    }
+  }
+
+  &__scroll::after {
+    content: "";
+    display: block;
+    height: 50px;
+    width: 1px;
+    background-color: var(--title-color);
+    margin: 2rem auto 0;
   }
 
   &__scroll span {
-    font-size: var(--smaller-font-size);
+    font-size: var(--fz-xs);
     transform: rotate(90deg);
   }
 
@@ -68,5 +106,6 @@
 
   &__scroll-name:hover {
     margin-bottom: 7px;
+    color: var(--secondary-color);
   }
 }

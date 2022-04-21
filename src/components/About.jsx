@@ -30,7 +30,7 @@ const About = () => {
 
       <div className="about__container container grid">
         <div className="about__handle">
-          <img src="img/c4_original-rmbg.png" alt="" className="home__img" />
+          <img src="img/c4_original-rmbg.png" alt="" className="about__img" />
         </div>
         <div className="about__data">
           <div className="about__info">

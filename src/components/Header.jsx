@@ -43,7 +43,7 @@ const Header = () => {
           </ul>
         </div>
 
-        <a href="pdf/Chizi-Wokoma.pdf" class="button--ghost cv">
+        <a href="pdf/Chizi-Wokoma.pdf" class="button cv">
           Resume
         </a>
       </nav>

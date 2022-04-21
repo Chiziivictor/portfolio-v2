@@ -28,7 +28,7 @@
   // --smaller-font-size: 0.75rem;
   // --tiny-font-size: 0.625rem;
   /*========== Font size from Brittany ==========*/
-  --fz-xxs: 12px;
+  --fz-xxs: 11px;
   --fz-xs: 13px;
   --fz-sm: 14px;
   --fz-md: 16px;
@@ -45,18 +45,41 @@
   --z-modal: 1000;
 }
 
-/* Responsive typography */
-/* @media screen and (min-width: 968px) {
-  :root {
-    --biggest-font-size: 2.5rem;
-    --h1-font-size: 2.25rem;
-    --h2-font-size: 1.5rem;
-    --h3-font-size: 1.25rem;
-    --normal-font-size: 1rem;
-    --small-font-size: .875rem;
-    --smaller-font-size: .813rem;
+/*=============== RESPONSIVE ===============*/
+$breakpoints: (
+  "tiny": (
+    max-width: 335px,
+  ),
+  "small": (
+    min-width: 500px,
+  ),
+  "medium": (
+    min-width: 800px,
+  ),
+  "large": (
+    min-width: 1080px,
+  ),
+  "x-large": (
+    min-width: 1500px,
+  ),
+) !default;
+
+@mixin respond-to($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
   }
-} */
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
 /*=============== BASE ===============*/
 * {
   box-sizing: border-box;
@@ -74,6 +97,10 @@ input,
 textarea {
   font-family: var(--body-font);
   font-size: var(--fz-sm);
+
+  @include respond-to("small") {
+    font-size: var(--fz-md);
+  }
 }
 
 body {
@@ -115,8 +142,6 @@ img {
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 100%;
-  margin-left: 1rem;
-  margin-right: 1rem;
 }
 
 main .container {
@@ -130,10 +155,29 @@ main .container {
 
 .main {
   overflow: hidden;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .section {
-  padding: 1rem 0 1rem;
+  padding: 1rem 1rem 1rem;
+
+  @include respond-to("small") {
+    padding: 1rem 3rem 1rem;
+  }
+
+  @include respond-to("medium") {
+    padding: 1rem 6rem 1rem;
+  }
+
+  @include respond-to("large") {
+    padding: 1rem 14rem 1rem;
+  }
+
+  @include respond-to("x-large") {
+    max-width: clamp(1000px, (calc(100% - 300px)), 2000px);
+    margin: 0 auto;
+  }
 }
 
 .section__title,
@@ -142,15 +186,29 @@ main .container {
 }
 
 .section__title {
-  font-size: var(--h2-font-size);
+  font-size: var(--fz-xxl);
   color: var(--first-color);
   margin: 0.3125rem auto 2rem;
 }
 
 .section__subtitle {
   display: block;
-  font-size: var(--smaller-font-size);
+  font-size: var(--fz-xs);
   color: var(--text-color);
+}
+
+.animate {
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  transform: translateX(100px);
+  font-size: 4.375rem;
+  opacity: 0.1;
+  color: var(--secondary-color);
+
+  @include respond-to("small") {
+    font-size: 6rem;
+  }
 }
 
 /*=============== BUTTONS ===============*/
@@ -161,9 +219,7 @@ main .container {
   padding: 0.75rem 1rem;
   border: 1px solid var(--first-color);
   border-radius: 0.5rem;
-  font: var(--font-medium);
   transition: 0.4s;
-  /* font-size: 2vw; */
 }
 
 .button:hover {

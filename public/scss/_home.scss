@@ -7,7 +7,7 @@
     min-height: 100vh;
     position: relative;
     row-gap: 4.5rem;
-    padding-top: 7rem;
+    padding-top: 20vh;
   }
 
   &__greeting,
@@ -19,14 +19,13 @@
     font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
     display: block;
     color: var(--title-color);
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
   }
 
   &__education {
-    color: var(--text-color);
+    color: var(--secondary-color);
     margin: 0.65rem auto;
     font-size: clamp(35px, 8vw, 65px);
-    opacity: 0.75;
     line-height: 100%;
   }
 
@@ -35,15 +34,13 @@
   }
 
   &__desc {
-    margin: 1rem auto;
+    margin: 1rem 0;
     font-size: var(--fz-sm);
-  }
+    max-width: 640px;
 
-  &__img {
-    width: 200px;
-    object-fit: cover;
-    object-position: 5px 70px;
-    position: relative;
+    @include respond-to("small") {
+      font-size: var(--fz-md);
+    }
   }
 
   &__buttons {
